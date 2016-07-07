@@ -1,0 +1,2 @@
+class BurnsController < ApplicationController
+end

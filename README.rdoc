@@ -1,0 +1,3 @@
+== README
+
+Events for burns!
