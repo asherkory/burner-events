@@ -16,7 +16,7 @@ class BurnsController < ApplicationController
   def create
     @burn = Burn.new(burn_params)
     if @burn.save
-      redirect_to burns_path, notice: "Successfully created"
+      redirect_to burn_path(@burn), notice: "Successfully created"
     else
       render :new
     end
@@ -46,6 +46,6 @@ class BurnsController < ApplicationController
     end
 
     def burn_params
-      params.require(:burn).permit(:name)
+      params.require(:burn).permit(:name, :admin_id)
     end
 end

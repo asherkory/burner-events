@@ -1,8 +1,10 @@
-<%= form_for :burn do |f| %>
+<%= form_for burn do |f| %>
   <p>
     <%= f.label :name %>
     <%= f.text_field :name %>
   </p>
+
+  <%= f.hidden_field :admin_id, value: current_admin.id %>
 
   <p><%= f.submit %></p>
 <% end %>
