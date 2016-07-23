@@ -1,0 +1,11 @@
+<h2>Burns</h2>
+
+<div class="list-group">
+  <% @burns.each do |burn| %>
+    <%= link_to burn.name, burn_path(burn), class: "list-group-item" %>
+  <% end %>
+</div>
+
+<% if admin_signed_in? %>
+  <%= link_to "Add new burn", new_burn_path %>
+<% end %>

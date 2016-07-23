@@ -2,7 +2,15 @@
   <nav>
     <ul class="nav nav-pills pull-right">
       <li role="presentation"><%= link_to "Home", root_path %></li>
-      <li role="presentation"><%= link_to "Events", events_path %></li>
+      <li role="presentation"><%= link_to "Burns", burns_path %></li>
+      <% if admin_signed_in? %>
+        <li role="presentation"><%= link_to "Sign Out", destroy_admin_session_path %></li>
+      <% elsif user_signed_in? %>
+        <li role="presentation"><%= link_to "Sign Out", destroy_user_session_path %></li>
+      <% else %>
+        <li role="presentation"><%= link_to "Sign In", new_user_session_path %></li>
+        <li role="presentation"><%= link_to "Register", new_user_registration_path %></li>
+      <% end %>
     </ul>
   </nav>
   <h3 class="text-muted">BurnerEvents</h3>
